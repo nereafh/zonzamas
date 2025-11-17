@@ -1,4 +1,4 @@
-#\. /var/www/html/zonzamas.lan/tablas/create_table_usuarios.sql
+#\. C:/Users/nerea/OneDrive/Documentos/2DAW ZONZAMAS/DSW/UN2/BD/lanzarote2026-master/tablas/create_table_usuarios.sql
 
 DROP TABLE usuarios;
 CREATE TABLE usuarios(

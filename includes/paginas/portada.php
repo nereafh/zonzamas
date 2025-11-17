@@ -4,192 +4,174 @@
 class Portada
 {
 
-    static function pintar()
+    public static function pintar()
     {
         return "
-            <!-- Masthead-->
-        <header class=\"masthead bg-primary text-white text-center\">
-            <div class=\"container d-flex align-items-center flex-column\">
-                <!-- Masthead Avatar Image-->
-                <img class=\"masthead-avatar mb-5\" src=\"/assets/plantilla/assets/img/avataaars.svg\" alt=\"...\" />
-                <!-- Masthead Heading-->
-                <h1 class=\"masthead-heading text-uppercase mb-0\">Start Bootstrap</h1>
-                <!-- Icon Divider-->
-                <div class=\"divider-custom divider-light\">
-                    <div class=\"divider-custom-line\"></div>
-                    <div class=\"divider-custom-icon\"><i class=\"fas fa-star\"></i></div>
-                    <div class=\"divider-custom-line\"></div>
-                </div>
-                <!-- Masthead Subheading-->
-                <p class=\"masthead-subheading font-weight-light mb-0\">Graphic Artist - Web Designer - Illustrator</p>
-            </div>
-        </header>
-        <!-- Portfolio Section-->
-        <section class=\"page-section portfolio\" id=\"portfolio\">
-            <div class=\"container\">
-                <!-- Portfolio Section Heading-->
-                <h2 class=\"page-section-heading text-center text-uppercase text-secondary mb-0\">Portfolio</h2>
-                <!-- Icon Divider-->
-                <div class=\"divider-custom\">
-                    <div class=\"divider-custom-line\"></div>
-                    <div class=\"divider-custom-icon\"><i class=\"fas fa-star\"></i></div>
-                    <div class=\"divider-custom-line\"></div>
-                </div>
-                <!-- Portfolio Grid Items-->
-                <div class=\"row justify-content-center\">
-                    <!-- Portfolio Item 1-->
-                    <div class=\"col-md-6 col-lg-4 mb-5\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal1\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/cabin.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 2-->
-                    <div class=\"col-md-6 col-lg-4 mb-5\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal2\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/cake.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 3-->
-                    <div class=\"col-md-6 col-lg-4 mb-5\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal3\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/circus.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 4-->
-                    <div class=\"col-md-6 col-lg-4 mb-5 mb-lg-0\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal4\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/game.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 5-->
-                    <div class=\"col-md-6 col-lg-4 mb-5 mb-md-0\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal5\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/safe.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                    <!-- Portfolio Item 6-->
-                    <div class=\"col-md-6 col-lg-4\">
-                        <div class=\"portfolio-item mx-auto\" data-bs-toggle=\"modal\" data-bs-target=\"#portfolioModal6\">
-                            <div class=\"portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100\">
-                                <div class=\"portfolio-item-caption-content text-center text-white\"><i class=\"fas fa-plus fa-3x\"></i></div>
-                            </div>
-                            <img class=\"img-fluid\" src=\"/assets/plantilla/assets/img/portfolio/submarine.png\" alt=\"...\" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- About Section-->
-        <section class=\"page-section bg-primary text-white mb-0\" id=\"about\">
-            <div class=\"container\">
-                <!-- About Section Heading-->
-                <h2 class=\"page-section-heading text-center text-uppercase text-white\">About</h2>
-                <!-- Icon Divider-->
-                <div class=\"divider-custom divider-light\">
-                    <div class=\"divider-custom-line\"></div>
-                    <div class=\"divider-custom-icon\"><i class=\"fas fa-star\"></i></div>
-                    <div class=\"divider-custom-line\"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class=\"row\">
-                    <div class=\"col-lg-4 ms-auto\"><p class=\"lead\">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class=\"col-lg-4 me-auto\"><p class=\"lead\">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class=\"text-center mt-4\">
-                    <a class=\"btn btn-xl btn-outline-light\" href=\"https://startbootstrap.com/theme/freelancer/\">
-                        <i class=\"fas fa-download me-2\"></i>
-                        Free Download!
-                    </a>
-                </div>
-            </div>
-        </section>
-        <!-- Contact Section-->
-        <section class=\"page-section\" id=\"contact\">
-            <div class=\"container\">
-                <!-- Contact Section Heading-->
-                <h2 class=\"page-section-heading text-center text-uppercase text-secondary mb-0\">Contact Me</h2>
-                <!-- Icon Divider-->
-                <div class=\"divider-custom\">
-                    <div class=\"divider-custom-line\"></div>
-                    <div class=\"divider-custom-icon\"><i class=\"fas fa-star\"></i></div>
-                    <div class=\"divider-custom-line\"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class=\"row justify-content-center\">
-                    <div class=\"col-lg-8 col-xl-7\">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id=\"contactForm\" data-sb-form-api-token=\"API_TOKEN\">
-                            <!-- Name input-->
-                            <div class=\"form-floating mb-3\">
-                                <input class=\"form-control\" id=\"name\" type=\"text\" placeholder=\"Enter your name...\" data-sb-validations=\"required\" />
-                                <label for=\"name\">Full name</label>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"name:required\">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class=\"form-floating mb-3\">
-                                <input class=\"form-control\" id=\"email\" type=\"email\" placeholder=\"name@example.com\" data-sb-validations=\"required,email\" />
-                                <label for=\"email\">Email address</label>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"email:required\">An email is required.</div>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"email:email\">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class=\"form-floating mb-3\">
-                                <input class=\"form-control\" id=\"phone\" type=\"tel\" placeholder=\"(123) 456-7890\" data-sb-validations=\"required\" />
-                                <label for=\"phone\">Phone number</label>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"phone:required\">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class=\"form-floating mb-3\">
-                                <textarea class=\"form-control\" id=\"message\" type=\"text\" placeholder=\"Enter your message here...\" style=\"height: 10rem\" data-sb-validations=\"required\"></textarea>
-                                <label for=\"message\">Message</label>
-                                <div class=\"invalid-feedback\" data-sb-feedback=\"message:required\">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class=\"d-none\" id=\"submitSuccessMessage\">
-                                <div class=\"text-center mb-3\">
-                                    <div class=\"fw-bolder\">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href=\"https://startbootstrap.com/solution/contact-forms\">https://startbootstrap.com/solution/contact-forms</a>
+        <!-- Header-->
+            <header class=\"bg-dark py-5\">
+                <div class=\"container px-5\">
+                    <div class=\"row gx-5 align-items-center justify-content-center\">
+                        <div class=\"col-lg-8 col-xl-7 col-xxl-6\">
+                            <div class=\"my-5 text-center text-xl-start\">
+                                <h1 class=\"display-5 fw-bolder text-white mb-2\">A Bootstrap 5 template for modern businesses</h1>
+                                <p class=\"lead fw-normal text-white-50 mb-4\">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit!</p>
+                                <div class=\"d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start\">
+                                    <a class=\"btn btn-primary btn-lg px-4 me-sm-3\" href=\"#features\">Get Started</a>
+                                    <a class=\"btn btn-outline-light btn-lg px-4\" href=\"#!\">Learn More</a>
                                 </div>
                             </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class=\"d-none\" id=\"submitErrorMessage\"><div class=\"text-center text-danger mb-3\">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <button class=\"btn btn-primary btn-xl disabled\" id=\"submitButton\" type=\"submit\">Send</button>
-                        </form>
+                        </div>
+                        <div class=\"col-xl-5 col-xxl-6 d-none d-xl-block text-center\"><img class=\"img-fluid rounded-3 my-5\" src=\"https://dummyimage.com/600x400/343a40/6c757d\" alt=\"...\" /></div>
+                    </div>
+                </div>
+            </header>
+            <!-- Features section-->
+            <section class=\"py-5\" id=\"features\">
+                <div class=\"container px-5 my-5\">
+                    <div class=\"row gx-5\">
+                        <div class=\"col-lg-4 mb-5 mb-lg-0\"><h2 class=\"fw-bolder mb-0\">A better way to start building.</h2></div>
+                        <div class=\"col-lg-8\">
+                            <div class=\"row gx-5 row-cols-1 row-cols-md-2\">
+                                <div class=\"col mb-5 h-100\">
+                                    <div class=\"feature bg-primary bg-gradient text-white rounded-3 mb-3\"><i class=\"bi bi-collection\"></i></div>
+                                    <h2 class=\"h5\">Featured title</h2>
+                                    <p class=\"mb-0\">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                </div>
+                                <div class=\"col mb-5 h-100\">
+                                    <div class=\"feature bg-primary bg-gradient text-white rounded-3 mb-3\"><i class=\"bi bi-building\"></i></div>
+                                    <h2 class=\"h5\">Featured title</h2>
+                                    <p class=\"mb-0\">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                </div>
+                                <div class=\"col mb-5 mb-md-0 h-100\">
+                                    <div class=\"feature bg-primary bg-gradient text-white rounded-3 mb-3\"><i class=\"bi bi-toggles2\"></i></div>
+                                    <h2 class=\"h5\">Featured title</h2>
+                                    <p class=\"mb-0\">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                </div>
+                                <div class=\"col h-100\">
+                                    <div class=\"feature bg-primary bg-gradient text-white rounded-3 mb-3\"><i class=\"bi bi-toggles2\"></i></div>
+                                    <h2 class=\"h5\">Featured title</h2>
+                                    <p class=\"mb-0\">Paragraph of text beneath the heading to explain the heading. Here is just a bit more text.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial section-->
+            <div class=\"py-5 bg-light\">
+                <div class=\"container px-5 my-5\">
+                    <div class=\"row gx-5 justify-content-center\">
+                        <div class=\"col-lg-10 col-xl-7\">
+                            <div class=\"text-center\">
+                                <div class=\"fs-4 mb-4 fst-italic\">\"Working with Start Bootstrap templates has saved me tons of development time when building new projects! Starting with a Bootstrap template just makes things easier!\"</div>
+                                <div class=\"d-flex align-items-center justify-content-center\">
+                                    <img class=\"rounded-circle me-3\" src=\"https://dummyimage.com/40x40/ced4da/6c757d\" alt=\"...\" />
+                                    <div class=\"fw-bold\">
+                                        Tom Ato
+                                        <span class=\"fw-bold text-primary mx-1\">/</span>
+                                        CEO, Pomodoro
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <!-- Blog preview section-->
+            <section class=\"py-5\">
+                <div class=\"container px-5 my-5\">
+                    <div class=\"row gx-5 justify-content-center\">
+                        <div class=\"col-lg-8 col-xl-6\">
+                            <div class=\"text-center\">
+                                <h2 class=\"fw-bolder\">From our blog</h2>
+                                <p class=\"lead fw-normal text-muted mb-5\">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque fugit ratione dicta mollitia. Officiis ad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=\"row gx-5\">
+                        <div class=\"col-lg-4 mb-5\">
+                            <div class=\"card h-100 shadow border-0\">
+                                <img class=\"card-img-top\" src=\"https://dummyimage.com/600x350/ced4da/6c757d\" alt=\"...\" />
+                                <div class=\"card-body p-4\">
+                                    <div class=\"badge bg-primary bg-gradient rounded-pill mb-2\">News</div>
+                                    <a class=\"text-decoration-none link-dark stretched-link\" href=\"#!\"><h5 class=\"card-title mb-3\">Blog post title</h5></a>
+                                    <p class=\"card-text mb-0\">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <div class=\"card-footer p-4 pt-0 bg-transparent border-top-0\">
+                                    <div class=\"d-flex align-items-end justify-content-between\">
+                                        <div class=\"d-flex align-items-center\">
+                                            <img class=\"rounded-circle me-3\" src=\"https://dummyimage.com/40x40/ced4da/6c757d\" alt=\"...\" />
+                                            <div class=\"small\">
+                                                <div class=\"fw-bold\">Kelly Rowan</div>
+                                                <div class=\"text-muted\">March 12, 2023 &middot; 6 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4 mb-5\">
+                            <div class=\"card h-100 shadow border-0\">
+                                <img class=\"card-img-top\" src=\"https://dummyimage.com/600x350/adb5bd/495057\" alt=\"...\" />
+                                <div class=\"card-body p-4\">
+                                    <div class=\"badge bg-primary bg-gradient rounded-pill mb-2\">Media</div>
+                                    <a class=\"text-decoration-none link-dark stretched-link\" href=\"#!\"><h5 class=\"card-title mb-3\">Another blog post title</h5></a>
+                                    <p class=\"card-text mb-0\">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <div class=\"card-footer p-4 pt-0 bg-transparent border-top-0\">
+                                    <div class=\"d-flex align-items-end justify-content-between\">
+                                        <div class=\"d-flex align-items-center\">
+                                            <img class=\"rounded-circle me-3\" src=\"https://dummyimage.com/40x40/ced4da/6c757d\" alt=\"...\" />
+                                            <div class=\"small\">
+                                                <div class=\"fw-bold\">Josiah Barclay</div>
+                                                <div class=\"text-muted\">March 23, 2023 &middot; 4 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=\"col-lg-4 mb-5\">
+                            <div class=\"card h-100 shadow border-0\">
+                                <img class=\"card-img-top\" src=\"https://dummyimage.com/600x350/6c757d/343a40\" alt=\"...\" />
+                                <div class=\"card-body p-4\">
+                                    <div class=\"badge bg-primary bg-gradient rounded-pill mb-2\">News</div>
+                                    <a class=\"text-decoration-none link-dark stretched-link\" href=\"#!\"><h5 class=\"card-title mb-3\">The last blog post title is a little bit longer than the others</h5></a>
+                                    <p class=\"card-text mb-0\">Some more quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                                <div class=\"card-footer p-4 pt-0 bg-transparent border-top-0\">
+                                    <div class=\"d-flex align-items-end justify-content-between\">
+                                        <div class=\"d-flex align-items-center\">
+                                            <img class=\"rounded-circle me-3\" src=\"https://dummyimage.com/40x40/ced4da/6c757d\" alt=\"...\" />
+                                            <div class=\"small\">
+                                                <div class=\"fw-bold\">Evelyn Martinez</div>
+                                                <div class=\"text-muted\">April 2, 2023 &middot; 10 min read</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Call to action-->
+                    <aside class=\"bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5\">
+                        <div class=\"d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start\">
+                            <div class=\"mb-4 mb-xl-0\">
+                                <div class=\"fs-3 fw-bold text-white\">New products, delivered to you.</div>
+                                <div class=\"text-white-50\">Sign up for our newsletter for the latest updates.</div>
+                            </div>
+                            <div class=\"ms-xl-4\">
+                                <div class=\"input-group mb-2\">
+                                    <input class=\"form-control\" type=\"text\" placeholder=\"Email address...\" aria-label=\"Email address...\" aria-describedby=\"button-newsletter\" />
+                                    <button class=\"btn btn-outline-light\" id=\"button-newsletter\" type=\"button\">Sign up</button>
+                                </div>
+                                <div class=\"small text-white-50\">We care about privacy, and will never share your data.</div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </main>
         ";
 
 

@@ -1,2 +1,6 @@
 hola:hello
 adios:bye
+casa:Home
+acercade:About
+contacto:Contact
+precio:Price
