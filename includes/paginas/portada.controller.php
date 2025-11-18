@@ -1,7 +1,7 @@
 <?php
 
 
-class Portada
+class PortadaController
 {
 
     public static function pintar()

@@ -1,8 +1,10 @@
 <?php
 
+
+
+
     class Template
     {
-
         public function __construct($templateDir='tpl')
         {
             $this->templateDir = rtrim($templateDir,'/');
@@ -49,10 +51,16 @@
             $template = new Template();
 
             return $template->render('navegacion',[
-                'portfolio' => Idioma::lit('portfolio')
+                'casa' => Idioma::lit('casa')
                ,'acercade'  => Idioma::lit('acercade')
                ,'contacto'  => Idioma::lit('contacto')
+               ,'precio'  => Idioma::lit('precio')
+               ,'ES'  => Idioma::lit('ES')
+               ,'EN'  => Idioma::lit('EN')
                ,'usuarios'  => Idioma::lit('usuarios')
+               ,'FAQ'  => Idioma::lit('FAQ')
+               ,'porfolio'  => Idioma::lit('porfolio')
+
             ]);
 
         }
@@ -70,14 +78,33 @@
         static function seccion($seccion)
         {
 
+            // Crear una instancia (necesaria para usar render)
+            $template = new Template();
+
             switch($seccion)
             {
                 case 'usuarios':
-                    $contenido = Usuario::pintar();
+                    $contenido = UsuarioController::pintar();
                 break;
 
+                case 'about':
+                    $contenido = $template->render('about');
+                    break;
+        
+                case 'contact':
+                    $contenido = $template->render('contact');
+                    break;
+        
+                case 'pricing':
+                    $contenido = $template->render('pricing');
+                    break;
+        
+                case 'faq':
+                    $contenido = $template->render('faq');
+                    break;
+        
                 default:
-                    $contenido = Portada::pintar();
+                    $contenido = PortadaController::pintar();
                 break;
             }
 

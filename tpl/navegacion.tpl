@@ -11,22 +11,22 @@
 
                 <!-- Enlaces principales -->
                 <li class="nav-item"><a class="nav-link" href="index.php">{{ casa }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="/assets/plantilla/about.html">{{ acercade }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="/assets/plantilla/contact.html">{{ contacto }}</a></li>
-                <li class="nav-item"><a class="nav-link" href="/assets/plantilla/pricing.html">{{ precio }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?seccion=about">{{ acercade }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?seccion=contact">{{ contacto }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?seccion=pricing">{{ precio }}</a></li>
 
                 <!-- Cambio de idioma -->
                 <li class="nav-item"><a class="nav-link" href="/?lang=es">{{ ES }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="/?lang=en">{{ EN }}</a></li>
 
                 <!-- Sección usuarios usando la lógica del profesor -->
-                <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="index.php?seccion=usuarios">{{ usuarios }}</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.php?seccion=usuarios">{{ usuarios }}</a>
                 </li>
 
 
                 <!-- Otros enlaces -->
-                <li class="nav-item"><a class="nav-link" href="faq.html">{{ FAQ }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php?seccion=faq">{{ FAQ }}</a></li>
 
                 <!-- Dropdown Blog -->
                 <li class="nav-item dropdown">

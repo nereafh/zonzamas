@@ -1,10 +1,14 @@
 <?php
 
 
+
 define('BOTON_ENVIAR',"<button type=\"submit\" class=\"btn btn-primary\">". Idioma::lit('enviar'.Campo::val('oper'))."</button>");
 
-class Usuario
+class UsuarioController
 {
+
+
+
 
     static $nick,$password,$oper,$id,$paso,$nombre,$apellidos,$email;
 
