@@ -51,14 +51,15 @@
             $template = new Template();
 
             return $template->render('navegacion',[
-                'casa' => Idioma::lit('casa')
+                'casa'      => Idioma::lit('casa')
                ,'acercade'  => Idioma::lit('acercade')
                ,'contacto'  => Idioma::lit('contacto')
-               ,'precio'  => Idioma::lit('precio')
-               ,'ES'  => Idioma::lit('ES')
-               ,'EN'  => Idioma::lit('EN')
+               ,'precio'    => Idioma::lit('precio')
+               ,'ES'        => Idioma::lit('ES')
+               ,'EN'        => Idioma::lit('EN')
                ,'usuarios'  => Idioma::lit('usuarios')
-               ,'FAQ'  => Idioma::lit('FAQ')
+               ,'libros'    => Idioma::lit('libros')
+               ,'FAQ'       => Idioma::lit('FAQ')
                ,'porfolio'  => Idioma::lit('porfolio')
 
             ]);
@@ -86,6 +87,10 @@
                 case 'usuarios':
                     $contenido = UsuarioController::pintar();
                 break;
+                case 'libros':
+                    $contenido = LibroController::pintar();
+                break;
+
 
                 case 'about':
                     $contenido = $template->render('about');

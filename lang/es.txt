@@ -31,6 +31,9 @@ precio:Precio
 ES:ES 
 EN:EN 
 FAQ:FAQ
+libros:Libros
+libro:Libro
+
 
 placeholdernombre:Inserta un nombre...
 placeholderapellidos:Inserta tus apellidos...

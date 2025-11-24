@@ -41,6 +41,9 @@ spl_autoload_register(function ($class) {
         case 'UsuarioController':
             require_once "includes/paginas/usuario.controller.php";
         break;
+        case 'LibroController':
+            require_once "includes/paginas/libro.controller.php";
+        break;
         case 'Campo':
             require_once "includes/campo.php";
         break;

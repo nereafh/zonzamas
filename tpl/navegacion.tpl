@@ -19,9 +19,10 @@
                 <li class="nav-item"><a class="nav-link" href="/?lang=es">{{ ES }}</a></li>
                 <li class="nav-item"><a class="nav-link" href="/?lang=en">{{ EN }}</a></li>
 
-                <!-- Sección usuarios usando la lógica del profesor -->
+                <!-- Sección usuarios usando la lógica del profesor y ejemplo añadido-->
                 <li class="nav-item">
                     <a class="nav-link" href="/usuarios/">{{ usuarios }}</a>
+                    <a class="nav-link" href="/libros/">{{ libros }}</a>
                 </li>
 
 
