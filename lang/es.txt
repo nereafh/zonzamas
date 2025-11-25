@@ -39,6 +39,9 @@ fecha_publicacion:Fecha Publicacion
 volver:Volver
 title_usuarios:Gestión de Usuarios
 
+isbn_obligatorio:ISBN obligatorio
+isbn_invalido:ISBN inválido
+email_invalido:Email inválido
 
 placeholdernombre:Inserta un nombre...
 placeholderapellidos:Inserta tus apellidos...

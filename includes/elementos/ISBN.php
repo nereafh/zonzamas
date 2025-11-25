@@ -19,11 +19,11 @@ class ISBN extends Elemento
 
         if (empty($valor)) {
             $this->error = true;
-            $this->literal_error = "<span class='error'>Debe rellenar el ISBN</span>";
+            $this->literal_error = "<span class='error'>" . Idioma::lit('valor_obligatorio') . "</span>";
             Formulario::$numero_errores++;
         } elseif (!preg_match($patron_isbn, $valor)) {
             $this->error = true;
-            $this->literal_error = "<span class='error'>Formato ISBN no válido</span>";
+            $this->literal_error = "<span class='error'>" . Idioma::lit('isbn_invalido') . "</span>";
             Formulario::$numero_errores++;
         }
     }
