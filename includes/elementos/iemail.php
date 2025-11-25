@@ -13,11 +13,15 @@
 
         function validar()
         {
-            if(empty(Campo::val($this->nombre)))
-            {
-                $this->error = True;
+            $valor = Campo::val($this->nombre);
+            if (empty($valor)) {
+                $this->error = true;
+                $this->literal_error = "<span class='error'>Debe introducir un email</span>";
+                Formulario::$numero_errores++;
+            } elseif (!filter_var($valor, FILTER_VALIDATE_EMAIL)) {
+                $this->error = true;
+                $this->literal_error = "<span class='error'>Email no válido</span>";
                 Formulario::$numero_errores++;
             }
         }
-
     }

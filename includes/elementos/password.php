@@ -13,14 +13,11 @@
 
         function validar()
         {
-            if(    empty(Campo::val($this->nombre))
-                || strlen(Campo::val($this->nombre)) <= 5
-            )
-            {
-
-                $this->error = True;
+            $valor = Campo::val($this->nombre);
+            if (empty($valor) || strlen($valor) <= 5) {
+                $this->error = true;
+                $this->literal_error = "<span class='error'>La contraseña debe tener al menos 6 caracteres</span>";
                 Formulario::$numero_errores++;
             }
         }
-
     }

@@ -66,7 +66,7 @@ class LibroController
         self::$titulo            = new Text(['nombre' => 'titulo']);
         self::$autor             = new Text(['nombre' => 'autor']);
         self::$genero            = new Text(['nombre' => 'genero']);
-        self::$isbn              = new Text(['nombre' => 'isbn']);
+        self::$isbn              = new ISBN(['nombre' => 'isbn']);
         self::$fecha_publicacion = new Text(['nombre' => 'fecha_publicacion']);
 
         Formulario::cargar_elemento(self::$paso);

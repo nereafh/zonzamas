@@ -62,6 +62,9 @@ spl_autoload_register(function ($class) {
         case 'IEmail':
             require_once "includes/elementos/iemail.php";
         break;
+        case 'ISBN':
+            require_once "includes/elementos/ISBN.php";
+        break;
         case 'Formulario':
             require_once "includes/formulario.php";
         break;

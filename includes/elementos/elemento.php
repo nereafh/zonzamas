@@ -11,6 +11,7 @@ class Elemento
         $this->style_error   = empty($datos['style_error'])    ? ''    : $datos['style_error'];
         $this->disabled      = empty($datos['disabled'])       ? ''    : $datos['disabled'];
         $this->esqueleto     = is_null($datos['esqueleto'])    ? True  : $datos['esqueleto'];
+        $this->error         = false;
     }
 
     function pintar()
@@ -18,7 +19,7 @@ class Elemento
         if ($this->disabled)
             $this->disabled = ' readonly="readonly" ';
 
-        if($this->error)
+        if ($this->error && empty($this->literal_error))
         {
             $this->literal_error = ' <span class="error">'. Idioma::lit('valor_obligatorio') .'</span>';
             $this->style   = 'error';
@@ -52,6 +53,6 @@ class Elemento
 
     function validar()
     {
-
+ 
     }
 }
