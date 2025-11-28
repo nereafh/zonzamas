@@ -59,6 +59,7 @@
                ,'EN'        => Idioma::lit('EN')
                ,'usuarios'  => Idioma::lit('usuarios')
                ,'libros'    => Idioma::lit('libros')
+               ,'horarios'  => Idioma::lit('horarios')
                ,'FAQ'       => Idioma::lit('FAQ')
                ,'porfolio'  => Idioma::lit('porfolio')
 
@@ -87,10 +88,14 @@
                 case 'usuarios':
                     $contenido = UsuarioController::pintar();
                 break;
+
                 case 'libros':
                     $contenido = LibroController::pintar();
                 break;
 
+                case 'horarios':
+                    $contenido = HorarioController::pintar();
+                break;
 
                 case 'about':
                     $contenido = $template->render('about');
@@ -151,5 +156,21 @@
             ";
 
     }
+
+    static function navegacion_horarios($total_registros, $pagina)
+    {
+        $pagina_siguiente = ($total_registros == LISTADO_TOTAL_POR_PAGINA)?  "<li class=\"page-item\"><a class=\"page-link\" href=\"/libros/{$pagina}\">Siguiente</a></li>" : '';
+        $pagina_anterior  = ($pagina != 1)? "<li class=\"page-item\"><a class=\"page-link\" href=\"/libros/". ($pagina-2) ."\">Anterior</a></li>" : '';
+
+        return "
+            <nav>
+                <ul class=\"pagination\">
+                    {$pagina_anterior}
+                    {$pagina_siguiente}
+                </ul>
+            </nav>
+        ";
+
+}
 
     }

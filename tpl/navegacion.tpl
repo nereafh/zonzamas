@@ -25,7 +25,11 @@
                 </li>
 
                 <li class="nav-item">
-                <a class="nav-link" href="/libros/">{{ libros }}</a>
+                    <a class="nav-link" href="/libros/">{{ libros }}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/horarios/">{{ horarios }}</a>
                 </li>
 
                 <!-- Otros enlaces -->
