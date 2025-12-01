@@ -1,25 +1,42 @@
--- 1. TABLA PERSONAS (NUEVA - Requisito: Tabla común)
--- Aquí se guardan tanto alumnos como profesores. 
--- Se usa un campo 'tipo' o 'rol' para diferenciarlos.
 
+DROP TABLE IF EXISTS horarios;
+DROP TABLE IF EXISTS modulos;
+DROP TABLE IF EXISTS aulas;
+DROP TABLE IF EXISTS cursos;
+DROP TABLE IF EXISTS personas;
+
+# 1. TABLA PERSONAS 
 CREATE TABLE personas (
     id          INT AUTO_INCREMENT PRIMARY KEY,
     nombre      VARCHAR(100) NOT NULL,
     apellidos   VARCHAR(100) NOT NULL,
     email       VARCHAR(150) UNIQUE,
-    tipo        CHAR(1) NOT NULL,        -- [P]rofesor, [A]lumno
-    creado_en   TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    -- Otros datos que estimes necesarios
+    tipo        CHAR(01) NOT NULL,        # [P]rofesor, [A]lumno
+    creado_en   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    # DATOS AUDITORÍA
+    usuario_alta      VARCHAR(255),
+    ip_alta           CHAR(15),
+    fecha_sis_alta    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    usuario_modi      VARCHAR(255),
+    ip_modi           CHAR(15),
+    fecha_modi        TIMESTAMP
 );
 
-INSERT INTO personas (nombre, apellidos, email, tipo) VALUES
-('Andrés', 'Calamaro', 'andrescalamaro@gmail.com', 'P'),
-('Marcela', 'Santos Pérez', 'marcelasantos@gmail.com', 'P'),
-('Emilia', 'García Torres', 'emigg@gmail.com', 'P'),
-('Juan Carlos', 'Ortega Vélez', 'juanca@gmail.com', 'P'),
-('Luna', 'Martínez López', 'lunamarti@gmail.com', 'P'),
-('Felipe', 'Gómez Ruiz', 'felipe2024@gmail.com', 'A'),
-('Tomás', 'Herrera Díaz', 'herreradiaz@gmail.com', 'A'),
-('Carla', 'Jiménez Rojas', 'carla321@gmail.com', 'A'),
-('Diego', 'Morales Núñez', 'diegomorales@gmail.com', 'A'),
-('Vanessa', 'Ramírez Solís', 'vanessarami@gmail.com', 'A');
+# #############################
+# 2.3 PERSONAS (Profesores y algunos alumnos)
+# #############################
+INSERT INTO personas (id, nombre, apellidos, email, tipo, usuario_alta, ip_alta) VALUES
+# PROFESORES (IDs 1-10)
+(1, 'Alan', 'Turing', 'alan@instituto.com', 'P', 'ADMIN', '127.0.0.1'),      # Prog/Backend
+(2, 'Ada', 'Lovelace', 'ada@instituto.com', 'P', 'ADMIN', '127.0.0.1'),      # BD/Sistemas
+(3, 'Grace', 'Hopper', 'grace@instituto.com', 'P', 'ADMIN', '127.0.0.1'),    # Marcas/Frontend
+(4, 'Linus', 'Torvalds', 'linus@instituto.com', 'P', 'ADMIN', '127.0.0.1'),  # Sistemas/Redes (SMR)
+(5, 'Tim', 'Berners-Lee', 'tim@instituto.com', 'P', 'ADMIN', '127.0.0.1'),  # Servicios Red/Web
+(6, 'Steve', 'Wozniak', 'steve@instituto.com', 'P', 'ADMIN', '127.0.0.1'),   # Hardware (SMR)
+(7, 'Margaret', 'Hamilton', 'margaret@instituto.com', 'P', 'ADMIN', '127.0.0.1'), # FOL/EIE
+
+# ALUMNOS (IDs 11+)
+(11, 'Juan', 'Pérez', 'juan.p@alumno.com', 'A', 'ADMIN', '127.0.0.1'),
+(12, 'Maria', 'García', 'maria.g@alumno.com', 'A', 'ADMIN', '127.0.0.1');

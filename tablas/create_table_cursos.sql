@@ -1,21 +1,25 @@
--- 2. TABLA CURSOS (MODIFICADA - Requisito: Letra y Curso)
+# 2. TABLA CURSOS
 CREATE TABLE cursos (
     id              INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_grado    VARCHAR(50) NOT NULL,           -- Ej: "DAW", "DAM"
-    curso_numero    INT NOT NULL,                   -- Ej: 1, 2
-    letra           CHAR(1) NOT NULL,               -- Ej: 'A', 'B' (Requisito explícito)
-    -- Concatenado en vista sería: "1 DAW A"
-    UNIQUE(nombre_grado, curso_numero, letra)       -- Evita duplicados como dos "1 DAW A"
+    nombre_grado    VARCHAR(50) NOT NULL,           # Ej: "DAW", "SMR"
+    curso_numero    INT NOT NULL,                   # Ej: 1, 2
+    letra           CHAR(1) NOT NULL,               # Ej: 'A'
+    UNIQUE(nombre_grado, curso_numero, letra),
 
-    
+    # DATOS AUDITORÍA
+    usuario_alta      VARCHAR(255),
+    ip_alta           CHAR(15),
+    fecha_sis_alta    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    usuario_modi      VARCHAR(255),
+    ip_modi           CHAR(15),
+    fecha_modi        TIMESTAMP
 );
 
-INSERT INTO cursos (nombre_grado, curso_numero, letra) VALUES
-('DAW', 1, 'A'),
-('DAW', 1, 'B'),
-('DAW', 2, 'A'),
-('DAW', 2, 'B'),
-('DAM', 1, 'A'),
-('DAM', 1, 'B'),
-('DAM', 2, 'A'),
-('DAM', 2, 'B');
+# #############################
+# 2.2 CURSOS
+# #############################
+INSERT INTO cursos (id, nombre_grado, curso_numero, letra, usuario_alta, ip_alta) VALUES
+(1, 'DAW', 1, 'A', 'ADMIN', '127.0.0.1'),
+(2, 'DAW', 2, 'A', 'ADMIN', '127.0.0.1'),
+(3, 'SMR', 1, 'A', 'ADMIN', '127.0.0.1'),
+(4, 'SMR', 2, 'A', 'ADMIN', '127.0.0.1');
