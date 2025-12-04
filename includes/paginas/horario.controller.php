@@ -19,9 +19,9 @@ class HorarioController
     static function pintar()
     {
 
-       
+        
 
-        $h1cabecera = "<h1>Horario del centro educativo</h1>";
+        $h1cabecera = "<h1>" . Idioma::lit('horario del centro educativo') ."</h1>";
         $contenido = self::desplegable();
       
         return "

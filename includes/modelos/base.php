@@ -131,11 +131,23 @@ class Base
             $wheremayor = substr($wheremayor,0,-4);
         }
 
+        $sqlwhere = '';
+        if (!empty($where) && !empty($wheremayor)) {
+            $sqlwhere = 'WHERE ' . $where . ' AND ' . $wheremayor;
+        } elseif (!empty($where)) {
+            $sqlwhere = 'WHERE ' . $where;
+        } elseif (!empty($wheremayor)) {
+            $sqlwhere = 'WHERE ' . $wheremayor;
+        }
 
-        if (!is_null($where) or !is_null($wheremayor))
+        /*
+                if (!is_null($where) or !is_null($wheremayor))
         {
             $sqlwhere = 'WHERE '. $where . $wheremayor;
         }
+        */
+
+
 
         $sql = "
             SELECT {$select}

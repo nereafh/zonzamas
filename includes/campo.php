@@ -38,10 +38,13 @@
 
         static function val($campo,$set_value = '')
         {
+            self::getInstancia();
             if(empty($set_value))
             {
                 self::getInstancia();
-                return self::$val[$campo];
+                
+                // Si el valor existe lo devolvemos, si no, devolvemos cadena vacía
+                return isset(self::$val[$campo]) ? self::$val[$campo] : '';
             }
             else
             {

@@ -2,10 +2,11 @@
 
 
 //define('BOTON_ENVIAR',"<button type=\"submit\" class=\"btn btn-primary\">". Idioma::lit('enviar'.Campo::val('oper'))."</button>");
-if (Campo::val('modo') == 'ajax'){
-    define('BOTON_ENVIAR',"<button onclick=\"fetchJSON('/libros/".Campo::val('oper')."/". Campo::val('id') ."?modo=ajax','formulario');
-    return false\" class=\"btn btn-primary\">". Idioma::lit('enviar'.Campo::val('oper'))."</button>");
-}else{
+if (Campo::val('modo') == 'ajax' && Campo::val('oper') == 'alta') {
+    define('BOTON_ENVIAR',"<button onclick=\"fetchJSON('/libros/alta?modo=ajax','formulario');return false\" class=\"btn btn-primary\">". Idioma::lit('enviar'.Campo::val('oper'))."</button>");
+} elseif (Campo::val('modo') == 'ajax') {
+    define('BOTON_ENVIAR',"<button onclick=\"fetchJSON('/libros/".Campo::val('oper')."/". Campo::val('id') ."?modo=ajax','formulario');return false\" class=\"btn btn-primary\">". Idioma::lit('enviar'.Campo::val('oper'))."</button>");
+} else {
     define('BOTON_ENVIAR',"<button type=\"submit\" class=\"btn btn-primary\">". Idioma::lit('enviar'.Campo::val('oper'))."</button>");
 }
 
@@ -248,8 +249,57 @@ class LibroController
         }
         $pagina++;
 
+        // Obtener el género seleccionado (si existe)
+        $genero_filtro = Campo::val('genero_filtro');
+        
+        // Formulario bootstrap para filtrar
+        //Quito: <input type='hidden' name='oper' value=''> para que se vea más limpia 
+        $form_filtro = "
+        <form method='GET' action='/libros/' class='mb-3'>
+                <div class='input-group'>
+                    <select name='genero_filtro' class='form-select'>
+                        <option value=''>Todos los géneros</option>
+                        <option value='Novela' ".($genero_filtro=='Novela'?'selected':'').">Novela</option>
+                        <option value='Ficción' ".($genero_filtro=='Ficción'?'selected':'').">Ficción</option>
+                        <option value='Terror' ".($genero_filtro=='Terror'?'selected':'').">Terror</option>
+                        <option value='Fantasía' ".($genero_filtro=='Fantasía'?'selected':'').">Fantasía</option>
+                        <option value='Romance' ".($genero_filtro=='Romance'?'selected':'').">Romance</option>
+                        <option value='Fábula' ".($genero_filtro=='Fábula'?'selected':'').">Fábula</option>
+                        <option value='Distopía' ".($genero_filtro=='Distopía'?'selected':'').">Distopía</option>
+                        <option value='Misterio' ".($genero_filtro=='Misterio'?'selected':'').">Misterio</option>
+                    </select>
+                    <button class='btn btn-primary' type='submit'>Filtrar</button>
+                </div>
+            </form>
+        ";
+
         $libro = new Libro();
 
+        
+        // Construimos primero las condiciones ORIGINAL
+        $condiciones = [
+            'wheremayor' => ['fecha_baja' => date('Ymd')],
+            'limit'      => LISTADO_TOTAL_POR_PAGINA,
+            'offset'     => $offset
+        ];
+
+        // Si el usuario eligió género, lo añadimos SIN romper nada
+        if ($genero_filtro) {
+            $condiciones['where'] = ['genero' => $genero_filtro];
+        }
+
+        // Llamada final a la BBDD -> IDÉNTICA a la tuya pero ampliada
+        $datos_consulta = $libro->get_rows($condiciones);
+
+        /*
+        El modelo get_rows genera una consulta SQL similar a esta:
+
+        SELECT * FROM libros
+        WHERE fecha_baja > hoy
+        AND genero = 'Ficción'
+        LIMIT 10 OFFSET 0
+        */
+        /* 
         $datos_consulta = $libro->get_rows([
              'wheremayor' => [
                 'fecha_baja' => date('Ymd')
@@ -257,8 +307,7 @@ class LibroController
             ,'limit'  => LISTADO_TOTAL_POR_PAGINA
             ,'offset' => $offset
         ]);
-
-        
+        */
 
 
         $listado_libros= '';
@@ -291,7 +340,9 @@ class LibroController
         $barra_navegacion = Template::navegacion_libros($total_registros,$pagina);
 
 
+
         return "
+            {$form_filtro}
             <table class=\"table\">
             <thead>
                 <tr>
@@ -310,7 +361,7 @@ class LibroController
             </tbody>
             </table>
             {$barra_navegacion}
-            <a href=\"/libros/alta\" class=\"btn btn-primary\"><i class=\"bi bi-file-earmark-plus\"></i> Alta libro</a>
+            <a onclick=\"fetchJSON('/libros/alta?modo=ajax')\" data-bs-toggle=\"modal\" data-bs-target=\"#ventanaModal\" class=\"btn btn-primary\"><i class=\"bi bi-file-earmark-plus\"></i> Alta libro</a>
             ";
 
     }
